@@ -5,14 +5,15 @@ import numpy as np
 
 from bs4 import BeautifulSoup
 
-def soup_setup(url):
+def soup_setup(url: str):
     
     response = requests.get(url)
+    #print(response)
     soup = BeautifulSoup(response.text, 'html.parser')
     
     return soup
 
-def get_links(start, end):
+def get_cfl_game_links(start: int, end: int):
     soups = [soup_setup(f'https://www.cfl.ca/schedule/{i}/') for i in range(start, end+1) if i != 2020]
     game_links = []
     for i in soups:
@@ -24,7 +25,7 @@ def get_links(start, end):
 
     return game_links
 
-def get_pbp(link):
+def get_cfl_game_pbp(link: str):
     game_id = link[25:29]
     game = requests.get(f"https://www.cfl.ca/wp-content/themes/cfl.ca/inc/admin-ajax.php?action=gametracker&scoreboardTemplate=1&eventId={game_id}&active_tab=playbyplay&template=1").json()
 
@@ -106,13 +107,13 @@ def get_pbp(link):
             
     return pbp
 
-def get_all_pbp(start, end):
-    links = get_links(start, end)
+def get_all_cfl_game_pbp(start: int, end: int):
+    links = get_cfl_game_links(start, end)
 
     all_pbp = []
     for i in links:
         try:
-            all_pbp.extend(get_pbp(i))
+            all_pbp.extend(get_cfl_game_pbp(i))
         except:
             print(f"Error scraping {i}")
             break
