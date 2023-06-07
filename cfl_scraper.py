@@ -1,6 +1,3 @@
-import os
-os.chdir(r"C:\Users\agad4\OneDrive\Documents\python_work\cfl")
-
 import requests
 import re
 
@@ -11,7 +8,6 @@ from bs4 import BeautifulSoup
 def soup_setup(url):
     
     response = requests.get(url)
-    #print(response)
     soup = BeautifulSoup(response.text, 'html.parser')
     
     return soup
@@ -109,8 +105,6 @@ def get_pbp(link):
             i['fumble_lost'] = 1 if (i['fumble'] == 1) & ('Lost' in i['playText']) else 0
             
     return pbp
-
-#test_game = get_pbp("https://www.cfl.ca/games/2267/montreal-alouettes-vs-winnipeg-blue-bombers/")
 
 def get_all_pbp(start, end):
     links = get_links(start, end)
