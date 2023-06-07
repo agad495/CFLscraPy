@@ -17,4 +17,6 @@ import pandas as pd
 pbp_df = pd.DataFrame(pbp)
 ```
 
+**CFL API data is not intended to be publicly hosted without a license. Please do not use this in any way to violates any CFL terms of use.**
+
 If you encounter any problems, issues, or errors, feel free to reach out. Thanks, and hope you enjoy!
