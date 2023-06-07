@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools","wheel","numpy","pandas","tqdm","re","requests","beautifulsoup4","lxml"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cflscrapy"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+authors = [
+    {name = "Anthony Gadaleta", email=""}
+]
+
+maintainers = [
+    {name = "Anthony Gadaleta", email=""}
+]
+
+description = "Scraping CFL data using the API powering cfl.ca."
+
+keywords = ['sports','football','Canadian','Canadian Football','gridiron','gridiron football']
+
+classifiers = [
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.10'
+]
+
+dependencies = [
+    "setuptools>=67.6.0",
+    "wheel",
+    "pandas>=1.5.3",
+    "tqdm",
+    "requests",
+    "beautifulsoup4>=4.4.0",
+    "lxml"
+]
+
+[project.urls]
+homepage = "https://github.com/agad495/CFLscraPy"
+documentation = "https://github.com/agad495/CFLscraPy/blob/main/DOCS.md"
+repository = "https://github.com/agad495/CFLscraPy.git"
+changelog = "https://github.com/agad495/CFLscraPy/blob/main/CHANGELOG.md"

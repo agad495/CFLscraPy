@@ -1,9 +1,12 @@
 # CFLscraPy
+
 Scraping CFL data using the CFL API.
 
 Scrape one or more seasons using the get_all_pbp function. For example,
 
 ```python
+from cflscrapy.cfl_scraper import get_all_pbp
+
 pbp = get_all_pbp(2017, 2022)
 ```
 
