@@ -1,5 +1,5 @@
 # CFLscraPy
-Scraping CFL data using the API powering cfl.ca
+Scraping CFL data using the CFL API.
 
 Scrape one or more seasons using the get_all_pbp function. For example,
 
